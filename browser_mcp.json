@@ -1,0 +1,52 @@
+{
+	"mcpServers": {
+		"playwright": {
+			"type": "stdio",
+			"sandboxEnabled": true,
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@0.0.77", "--isolated"
+			],
+			"env": {
+				"DISPLAY": ":1",
+				"PATH": "/Users/dannieai/.nvm/versions/node/v24.18.0/bin:/usr/bin:/bin:/usr/local/bin"
+			},
+			"cwd": "${workspaceFolder}"
+		},
+		"airbnb": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@openbnb/mcp-server-airbnb",
+				 "--ignore-robots-txt"
+			],
+			"env": {
+				"PATH": "/Users/dannieai/.nvm/versions/node/v24.18.0/bin:/usr/bin:/bin:/usr/local/bin"
+			},
+			"type": "stdio"
+		},
+		"duckduckgo-search": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"duckduckgo-mcp-server"
+			],
+			"env": {
+				"PATH": "/Users/dannieai/.nvm/versions/node/v24.18.0/bin:/usr/bin:/bin:/usr/local/bin"
+			},
+			"type": "stdio"
+		}
+	},
+	"inputs": [
+	{
+		"id": "cwd",
+		"type": "promptString",
+		"description": "Working Directory"
+	},
+	{
+		"id": "watchFiles",
+		"type": "promptString",
+		"description": "Files to Watch"
+	}
+]
+}
